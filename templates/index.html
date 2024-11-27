@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>Per ora funziona tutto!</h1>
-    </body>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista della Spesa</title>
+</head>
+<body>
+
+    <h1>La tua Lista della Spesa</h1>
+
+    <!-- Verifica se la lista contiene elementi -->
+    {% if lista %}
+    <ul>
+        {% for elemento in lista %}
+        <li>
+            {{ elemento }}
+            <!-- Form per rimuovere un elemento dalla lista -->
+            <form action="/rimuovi/{{ loop.index0 }}" method="post" style="display:inline;">
+                <button type="submit">Rimuovi</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>La lista è vuota.</p>
+    {% endif %}
+
+    <!-- Form per aggiungere un nuovo elemento alla lista -->
+    <form action="/aggiungi" method="post">
+        <input type="text" name="elemento" placeholder="Aggiungi un elemento" required>
+        <button type="submit">Aggiungi</button>
+    </form>
+
+    <!-- Form per svuotare la lista -->
+    <form action="/svuota_lista" method="post">
+        <button type="submit">Svuota la Lista</button>
+    </form>
+
+</body>
 </html>
