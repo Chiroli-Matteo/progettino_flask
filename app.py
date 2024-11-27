@@ -1,13 +1,17 @@
-from flask import Flask
-6.
-7. #inizializza l'app Flask
-8. app = Flask(__name__)
-9.
-10.#rotta principale
-11.@app.route('/')
-12.def home():
-13. return "Per ora funziona tutto"
-14.
-15.#avvio dell'app Flask
-16.if __name__ == '__main__':
-17. app.run(debug=True)
+from flask import Flask, render_template
+
+#inizializza l'app Flask
+app = Flask(__name__)
+
+#rotta principale
+@app.route('/')
+def home():
+ return "Per ora funziona tutto"
+
+#avvio dell'app Flask
+if __name__ == '__main__':
+ app.run(debug=True)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
