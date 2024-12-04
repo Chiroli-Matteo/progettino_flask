@@ -1,0 +1,97 @@
+/* Stile generale */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Titolo principale */
+h1 {
+    text-align: center;
+    color: #555;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+/* Contenitore principale */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Lista degli elementi */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #f0f0f0;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Pulsanti */
+button {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Input di testo */
+input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Pulsante Aggiungi */
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    background-color: #34c759;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+    background-color: #248f47;
+}
+
+/* Messaggio quando la lista è vuota */
+p {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
