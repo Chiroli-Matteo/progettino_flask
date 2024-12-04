@@ -76,7 +76,7 @@ form button[type="submit"] {
     padding: 10px;
     margin-top: 10px;
     font-size: 16px;
-    background-color: #34c759;
+    background-color: #14918a;
     border: none;
     border-radius: 8px;
     color: white;
@@ -86,7 +86,7 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-    background-color: #248f47;
+    background-color: #14918a;
 }
 
 /* Messaggio quando la lista è vuota */

@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Inclusione del foglio di stile utilizzando Flask (static/css/style.css) -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Specifica il set di caratteri della pagina -->
     <meta charset="UTF-8">
+    
+    <!-- Rende il layout della pagina responsivo sui dispositivi mobili -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista della Spesa</title>
+    
+    <!-- Titolo della pagina -->
+    <title>Lista della Spesa Di CHIRO</title>
 </head>
 <body>
-    <h1>La tua Lista della Spesa</h1>
+    <!-- Intestazione principale della pagina -->
+    <h1>La lista della spesa di CHIRO</h1>
     
+    <!-- Controllo se esistono elementi nella lista -->
     {% if lista %}
     <ul>
+        <!-- Itera su ogni elemento della lista -->
         {% for elemento in lista %}
         <li>
+            <!-- Visualizza l'elemento della lista -->
             {{ elemento.elemento }}
+            
+            <!-- Form per rimuovere un elemento dalla lista (metodo POST) -->
             <form action="/rimuovi/{{ elemento.id }}" method="post" style="display:inline;">
                 <button type="submit">Rimuovi</button>
             </form>
         </li>
         {% endfor %}
     </ul>
+    
+    <!-- Form per svuotare l'intera lista (metodo POST) -->
     <form action="/svuota" method="post">
         <button type="submit" style="margin-top: 10px;">Svuota la lista</button>
     </form>
     {% else %}
+    <!-- Messaggio mostrato se la lista è vuota -->
     <p>La lista è vuota.</p>
     {% endif %}
     
+    <!-- Form per aggiungere un nuovo elemento alla lista (metodo POST) -->
     <form action="/aggiungi" method="post">
         <input type="text" name="elemento" placeholder="Aggiungi un elemento" required>
         <button type="submit">Aggiungi</button>
